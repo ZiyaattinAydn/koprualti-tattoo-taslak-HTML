@@ -1,0 +1,316 @@
+
+/*
+  Köprüaltı — September 2026 design polish
+  Shared fixes are isolated from the archived prototype stylesheet.
+  Primary dark brand purple: #65336f. Light purple is reserved for readable text
+  on ink-dark backgrounds rather than introducing another hue.
+*/
+:root {
+  --purple: #65336f;
+  --purple-2: #65336f;
+  --purple-deep: #321a38;
+  --purple-light: #b48bc0;
+  --ink: #0b0a0d;
+  --paper: #f5f0e9;
+}
+/* The stray 4px line used to sit above every page header. */
+.top { display: none !important; }
+.eyebrow, .kick, .crumb { line-height: 1.55; letter-spacing: .15em; }
+.hero .kick, .pagehero .crumb, .pagehero .eyebrow,
+.doctor-info .eyebrow, .artist-copy .eyebrow,
+.services-page .eyebrow, .ataturk-page .eyebrow {
+  color: var(--purple-light);
+}
+.manifest .eyebrow, .archive .eyebrow, .studios-page .eyebrow,
+.portfolio-section .eyebrow { color: var(--purple); }
+
+/* Editorial headings need actual line boxes: original 0.80–0.88 line-height
+   made Turkish dotted capitals collide with adjacent lines. */
+.hero h1, .manifest h2, .work-head h2, .archive-title,
+.appointment-copy h1, .tribute h2, .identity h1,
+.pagehero h1, .artist-works-head h2, .section-head h2 {
+  text-wrap: balance;
+  overflow-wrap: normal;
+  letter-spacing: -.052em;
+}
+.hero h1 {
+  max-width: 1120px;
+  font-size: clamp(58px, 7.9vw, 133px);
+  line-height: 1.04;
+  margin: 20px 0 26px;
+}
+.hero h1 span {
+  margin-top: .08em;
+  color: var(--purple-light);
+}
+.hero-in { padding-top: clamp(88px, 9vw, 126px); padding-bottom: 130px; }
+.manifest-grid { align-items: center; gap: clamp(36px, 6vw, 88px); }
+.manifest h2 {
+  font-size: clamp(58px, 7.1vw, 114px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  margin-top: 18px;
+}
+.manifest h2 .outline-word {
+  -webkit-text-stroke: 1.4px var(--purple);
+  text-stroke: 1.4px var(--purple);
+}
+.manifest-copy { margin: 0; }
+.archive-title {
+  font-size: clamp(66px, 8.8vw, 135px);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+  overflow-wrap: anywhere;
+}
+.archive-head { gap: 36px; }
+.archive-intro { margin-top: 26px; }
+.work-head h2 { font-size: clamp(54px, 6.6vw, 98px); line-height: 1.04; }
+.tribute { background: var(--purple); }
+.tribute h2 { line-height: 1.08; letter-spacing: -.04em; }
+.tribute-sign--arm { border-radius: 4px; }
+
+/* Give page labels and titles dedicated vertical space; no overlayed crumbs. */
+.pagehero { padding: clamp(72px, 8vw, 108px) 0 clamp(68px, 7vw, 96px); }
+.pagehero .crumb { display: block; margin-bottom: 22px; }
+.pagehero .eyebrow { display: block; margin-bottom: 22px; }
+.pagehero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(49px, 6vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+.pagehero p { font-size: 15px; line-height: 1.9; }
+.studios-map-page { padding-top: 14px; }
+.archive { background: #eee9e1; }
+.archive-stamp { border-color: var(--purple); color: var(--purple); }
+
+/* A single dark-purple family for buttons, labels, links and pale layouts. */
+.btn.purple, .filterbar .active, .steps i.active { background: var(--purple); }
+.nav > a:after, .dd > button:after { background: var(--purple); }
+.artist-card a { color: var(--purple-light); }
+.artist-sheet .eyebrow, .artist-mono, .artist-mini-letter,
+.artist-sheet-inner .eyebrow, .artist-planner .eyebrow { color: var(--purple); }
+.service-trigger .arrow { color: var(--purple-light); }
+
+/* Service explanations: real image panels rather than empty gradients. */
+.service-detail { align-items: start; }
+.service-row.open .service-detail { max-height: 1100px; }
+.service-visual {
+  position: relative;
+  display: block;
+  min-height: 260px;
+  height: 340px;
+  margin: 0;
+  border: 1px solid #35303a;
+  background: #18131b;
+  overflow: hidden;
+}
+.service-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) contrast(1.09);
+  transition: transform .4s ease, filter .4s ease;
+}
+.service-row:hover .service-visual img {
+  filter: grayscale(.45) contrast(1.06);
+  transform: scale(1.025);
+}
+.service-visual figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 26px 14px 12px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  background: linear-gradient(transparent, rgba(0,0,0,.78));
+}
+.service-copy h3 { line-height: 1.15; }
+
+/* Appointment: a composed split panel, not a full-height purple rectangle. */
+.appointment-page-v2 {
+  min-height: calc(100vh - 100px);
+  padding: clamp(58px, 6.5vw, 98px) 0 clamp(78px, 8vw, 120px);
+  background: linear-gradient(180deg, #f5f0e9 0%, #eee7df 49%, #131015 49%, #131015 100%);
+}
+.appointment-accent { display: none; }
+.appointment-shell {
+  background: #44254d;
+  border: 1px solid #5b3362;
+  border-radius: 25px;
+  padding: clamp(28px, 4.5vw, 62px);
+  box-shadow: 0 24px 68px rgba(12,5,14,.20);
+}
+.appointment-shell:before, .appointment-shell:after { display: none; }
+.appointment-page-v2 .appointment-wrap {
+  width: 100%;
+  grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr);
+  gap: clamp(28px, 4vw, 60px);
+  align-items: center;
+}
+.appointment-page-v2 .appointment-copy h1 {
+  margin: 16px 0 26px;
+  font-size: clamp(58px, 5.25vw, 96px);
+  line-height: 1.06;
+  letter-spacing: -.045em;
+}
+.appointment-page-v2 .appointment-copy h1 br { display: none; }
+.appointment-page-v2 .appointment-copy .white-line,
+.appointment-page-v2 .appointment-copy .violet-line { display: block; margin: 0 0 .05em; }
+.appointment-page-v2 .appointment-copy .violet-line { color: #c29bce; }
+.appointment-page-v2 .appointment-copy p { max-width: 450px; font-size: 14px; }
+.appointment-page-v2 .form {
+  border: none;
+  border-radius: 16px;
+  background: #fffdf9;
+  padding: clamp(25px, 3vw, 42px);
+  box-shadow: 0 24px 68px rgba(19,8,22,.18);
+}
+.form h3 { line-height: 1.28; }
+.choice, .field input, .field select, .field textarea { border-radius: 8px; }
+.choice.active, .choice:hover { background: #f3ecf5; border-color: var(--purple); }
+.appointment-page-v2 .steps i.active { background: #c29bce; }
+
+/* Kantin-inspired footer composition, reinterpreted in Köprüaltı colours. */
+.footer-v2 {
+  background-color: #23162a;
+  background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-top: 0;
+  padding: 72px 0 32px;
+  color: #fff;
+}
+.footer-v2-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.14fr) repeat(2,minmax(0, .9fr));
+  gap: 18px;
+  align-items: stretch;
+}
+.footer-brand-panel {
+  display: flex;
+  flex-direction: column;
+  background: #42224b;
+  padding: 34px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 22px;
+}
+.footer-brand-panel .footer-logo {
+  width: min(220px, 88%);
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+.footer-brand-panel h2 {
+  margin: 0 0 18px;
+  font-size: clamp(36px, 3.2vw, 56px);
+  line-height: 1.09;
+  letter-spacing: -.05em;
+}
+.footer-brand-panel p { font-size: 13px; color: #eadbed; line-height: 1.7; }
+.footer-v2 .footer-brand-panel a {
+  align-self: flex-start;
+  margin-top: auto;
+  color: #241428;
+  background: #fff;
+  border-radius: 100px;
+  padding: 13px 19px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.footer-location {
+  display: flex !important;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 350px;
+  padding: 30px !important;
+  margin: 0 !important;
+  background: #fffdf9;
+  color: #151019 !important;
+  border-radius: 22px;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.footer-location:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.19); }
+.footer-location-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .11em;
+}
+.footer-location h3 {
+  margin: 2px 0 0;
+  font-size: clamp(27px, 2.7vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -.06em;
+}
+.footer-location p { font-size: 13px; color: #625968; line-height: 1.7; margin: 0; }
+.footer-location-action {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 99px;
+  color: #fff;
+  background: var(--purple);
+  padding: 13px 18px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.footer-v2-lower {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: center;
+  margin-top: 34px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+.footer-v2-links { display:flex; flex-wrap:wrap; gap:10px 22px; }
+.footer-v2-links a { display:inline-block; margin:0; color:#e0d4e3; font-size:12px; }
+.footer-v2-note { margin:0; color:#bfb0c5; font-size:11px; text-align:right; }
+.footer-v2 .bottom { margin-top: 4px; padding-top: 18px; border-top:1px solid rgba(255,255,255,.08); color:#a794b0; }
+
+/* Breakpoint checks: Turkish accents and big words stay clear and uncut. */
+@media (max-width: 1120px) {
+  .manifest-grid { gap: 38px; }
+  .manifest h2 { font-size: clamp(54px, 8.4vw, 90px); }
+  .hero h1 { font-size: clamp(58px, 8vw, 96px); }
+  .footer-v2-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand-panel { grid-column: 1/-1; min-height: 300px; }
+  .appointment-page-v2 .appointment-wrap { grid-template-columns: 1fr; }
+  .appointment-page-v2 .appointment-copy h1 { font-size: clamp(58px, 8vw, 100px); }
+}
+@media (max-width: 760px) {
+  .hero h1 { font-size: clamp(45px, 11.2vw, 72px); line-height: 1.07; letter-spacing: -.055em; }
+  .hero-in { padding-top: 78px; padding-bottom: 108px; }
+  .manifest h2 { font-size: clamp(45px, 10.5vw, 76px); line-height: 1.1; }
+  .manifest-copy { font-size: 19px; }
+  .work-head h2 { font-size: clamp(45px, 10vw, 72px); }
+  .archive-title { font-size: clamp(60px, 11vw, 92px); line-height: 1.1; }
+  .pagehero .crumb { margin-bottom: 16px; }
+  .pagehero .eyebrow { margin-bottom: 16px; }
+  .pagehero h1 { font-size: clamp(43px, 9.5vw, 72px); line-height: 1.13; }
+  .service-row.open .service-detail { max-height: 1600px; }
+  .service-visual { height: 300px; }
+  .appointment-page-v2 { background: #18121b; padding: 38px 0 80px; }
+  .appointment-shell { border-radius: 18px; padding: 28px 20px; }
+  .appointment-page-v2 .appointment-copy h1 { font-size: clamp(52px, 10.2vw, 78px); }
+  .footer-v2-grid { grid-template-columns: 1fr; }
+  .footer-brand-panel { grid-column: auto; min-height: 300px; }
+  .footer-location { min-height: 300px; }
+  .footer-v2-lower { flex-direction: column; align-items: flex-start; }
+  .footer-v2-note { text-align: left; }
+}
+@media (max-width: 420px) {
+  .hero h1 { font-size: clamp(40px, 10.8vw, 54px); }
+  .manifest h2 { font-size: clamp(39px, 9.6vw, 53px); }
+  .archive-title { font-size: 54px; }
+  .appointment-page-v2 .appointment-copy h1 { font-size: 49px; }
+}
