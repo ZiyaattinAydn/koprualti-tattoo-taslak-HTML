@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rye&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/polish-september.css"><link rel="stylesheet" href="css/design-v33.css"><link rel="stylesheet" href="css/footer-v37.css"><link rel="stylesheet" href="css/header-v38.css"><link rel="stylesheet" href="css/ambient-v40.css"><link rel="stylesheet" href="css/tipografi-v44.css"><link rel="stylesheet" href="css/fix-v45.css">
 
-<link rel="stylesheet" href="css/doodles-v50.css"><link rel="stylesheet" href="css/basliklar-rye-v53.css"></head>
+<link rel="stylesheet" href="css/doodles-v50.css"><link rel="stylesheet" href="css/basliklar-rye-v53.css"><link rel="stylesheet" href="css/portfolio-lightbox-v54.css"><link rel="stylesheet" href="css/final-responsive-v56.css"><link rel="stylesheet" href="css/artist-photo-v57.css"></head>
 <body class="artists-page-view">
   <div class="top"></div>
   <header class="header header-v38">
@@ -53,7 +53,7 @@
     <section id="doktor" class="artist-spotlight doctor-spotlight">
       <div class="wrap artist-spotlight-grid reveal">
         <div class="artist-media artist-media-photo">
-          <img src="assets/doctor-live.png" alt="Doktor çalışırken çekilmiş stüdyo fotoğrafı">
+          <img src="assets/doctor-live.png" alt="Doktor çalışırken çekilmiş stüdyo fotoğrafı" data-lightbox-image role="button" tabindex="0" aria-label="Doktor çalışırken çekilmiş stüdyo fotoğrafı görselini büyüt">
         </div>
         <div class="artist-copy">
           <div class="eyebrow">01 / BU ADAM KİM?</div>
@@ -149,21 +149,14 @@
 
     <section id="birsu" class="artist-spotlight birsu-spotlight">
       <div class="wrap artist-spotlight-grid reveal d3">
-        <div class="artist-media artist-media-placeholder">
-          <div class="artist-profile-sheet">
-            <div class="artist-profile-sheet__inner">
-              <div class="artist-profile-sheet__eyebrow">04 / PROFİL HAZIRLANIYOR</div>
-              <div class="artist-profile-sheet__mono">B</div>
-              <h3 class="artist-profile-sheet__name">Birsu</h3>
-              <p class="artist-profile-sheet__text">Profesyonel çekimler, seçili işler ve detaylı tanıtım metni geldikçe bu alan tamamlanacak. Şimdilik yapının yerini net biçimde açıyoruz.</p>
-            </div>
-          </div>
+        <div class="artist-media artist-media-photo">
+          <img src="assets/birsu-studio.jpeg" alt="Birsu stüdyoda dövme yaparken" loading="lazy" data-lightbox-image data-title="Birsu — stüdyoda çalışma anı" data-artist="Birsu" role="button" tabindex="0" aria-label="Birsu'nun stüdyo fotoğrafını büyüt">
         </div>
         <div class="artist-copy">
           <div class="eyebrow">04 / EKİP</div>
           <h2 class="heritage artist-title">Birsu</h2>
-          <p class="artist-lead">Birsu için elimizde henüz kapsamlı bir biyografi yok; ama aynı sistemin bir parçası olarak sayfadaki yerini açıyoruz.</p>
-          <p class="artist-body">Final sürümde burada uzmanlık alanları, çalışma yaklaşımı ve seçili uygulamalar yer alacak. Yeni çekimler ve bilgiler geldikçe bu bölüm de diğer sanatçılar gibi güçlü, düzenli ve daha kişisel bir profile dönüşecek.</p>
+          <p class="artist-lead">Birsu’dan stüdyoda bir çalışma anı. Detaylı biyografi ve seçili işleri yakında eklenecek.</p>
+          <p class="artist-body">Final sürümde burada uzmanlık alanları, çalışma yaklaşımı ve seçili uygulamalar yer alacak. Yeni bilgiler geldikçe bu bölüm daha kişisel bir profile dönüşecek.</p>
           <div class="artist-focus">
             <span class="artist-focus-label">UYGULAMA ALANLARI</span>
             <div class="artist-focus-list">
@@ -172,7 +165,7 @@
           </div>
           <div class="artist-tags muted-tags">
             <span>Profil Güncelleniyor</span>
-            <span>Yeni Çekimler Eklenecek</span>
+            <span>Stüdyodan Bir Kare</span>
             <span>Seçili İşler Yakında</span>
           </div>
           <div class="artist-profile-action"><span class="btn-ghost">Profil Yakında</span></div>
@@ -224,6 +217,8 @@
 </footer>
 
   <script src="js/app.js"></script>
+
+<script defer src="js/lightbox-v54.js"></script>
 
 <script defer src="js/doodles-v50.js"></script></body>
 </html>

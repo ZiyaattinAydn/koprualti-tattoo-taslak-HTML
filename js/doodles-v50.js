@@ -12,6 +12,8 @@
     'about.html':[['.archive','light']],
     'ataturk.html':[['.ataturk-hero','dark'],['.ataturk-story','dark'],['.ataturk-editorial-section','dark'],['.ataturk-stance','dark'],['.ataturk-details-section','dark']],
     'studios.html':[['.pagehero','dark'],['.studios-page','light']],
+    'sube-alsancak.html':[['.branch-intro','dark'],['.branch-future','dark']],
+    'sube-karsiyaka.html':[['.branch-intro','dark'],['.branch-future','dark']],
     'services.html':[['.pagehero','dark'],['.service-list','dark']],
     'appointment.html':[['.booking-stage','purple']]
   };
@@ -31,12 +33,14 @@
     'about.html':['symbols-k6','classic-blackletter','botanical-rose','botanical-olive-branch','fauna-swallow','symbols-anchor','botanical-sun-moon','symbols-diamond','botanical-tree'],
     'ataturk.html':['botanical-olive-branch','botanical-rose','fauna-swallow','botanical-crescent','botanical-lotus','fauna-angel','botanical-blossom','symbols-anchor'],
     'studios.html':['fauna-wings','botanical-rose','symbols-diamond','botanical-crescent','fauna-eagle','botanical-olive-branch','symbols-k6'],
+    'sube-alsancak.html':['symbols-k6','botanical-rose','fauna-swallow','botanical-olive-branch'],
+    'sube-karsiyaka.html':['fauna-wings','symbols-diamond','botanical-crescent','fauna-eagle'],
     'services.html':['symbols-anatomical-heart','fauna-cobra','botanical-rosebud','symbols-dagger-heart','fauna-swallow','symbols-anchor','fauna-scorpion'],
     'appointment.html':['botanical-rose','fauna-swallow','symbols-anchor','botanical-heart','symbols-crown','botanical-olive-branch','symbols-diamond']
   };
   const ALL=[...motifs.botanical,...motifs.classic,...motifs.symbols,...motifs.fauna,...motifs.signature];
   const RATIO={"botanical-rose":0.997,"botanical-stargazer-lily":1.0599,"botanical-rosebud":1.1617,"botanical-lotus":1.0586,"botanical-blossom":1.0327,"botanical-olive-branch":1.218,"botanical-tree":1.0982,"botanical-barbed-wreath":1.0594,"botanical-sun-moon":1.0136,"botanical-sun":0.9796,"botanical-crescent":1.0442,"botanical-clover":1.1538,"botanical-allseeing-eye":1.1182,"botanical-heart":1.5467,"botanical-flying-swallow":0.9713,"botanical-paws":0.9365,"classic-blackletter":0.8049,"classic-barbed-circle":0.9914,"classic-double-rose":1.3849,"classic-lily":1.2344,"classic-moon-sun":1.0829,"classic-swift":1.1931,"classic-royal-crown":1.0956,"classic-sword-heart":1.4153,"classic-dice-pair":1.0464,"symbols-k6":0.9272,"symbols-crown":1.0,"symbols-diamond":1.2448,"symbols-dice":1.0294,"symbols-skull":1.28,"symbols-anatomical-heart":1.3333,"symbols-brain":1.1548,"symbols-dagger-heart":1.3169,"symbols-anchor":1.4798,"symbols-astronaut":1.0483,"symbols-sunmoon":1.0029,"fauna-cobra":1.1953,"fauna-dragon":1.2803,"fauna-scorpion":1.1581,"fauna-wolf":1.2046,"fauna-fox":1.0839,"fauna-bear":0.9564,"fauna-eagle":1.0395,"fauna-panther":0.9294,"fauna-koi":1.2115,"fauna-lion-family":1.0329,"fauna-swallow":1.0984,"fauna-spider":1.3347,"fauna-lion-head":1.0317,"fauna-wings":0.7277,"fauna-shell":1.0897,"fauna-angel":0.9243,"doktor":1.2433,"medusa":1.1327,"symbols-eye-emblem":1.3376,"symbols-tree-emblem":1.2528,"symbols-love-rose":0.9963,"symbols-barbed-ring":0.9963};
-  const panels='.form,.booking-form,.booking-panel,.preview-form,.pcard,.work-card,.artist-card,.artist-media,.doctor-card,.service-visual,.studio-map-card,.studio-card,.archive-note,.archive-card,.tribute-sign,.ataturk-counter,.ataturk-portrait-stage,.artist-work-card,.portrait,.booking-step,.service-detail,.booking-shell,.appointment-shell,.moodgrid,.filterbar,.artist-work-mosaic';
+  const panels='.form,.booking-form,.booking-panel,.preview-form,.pcard,.work-card,.artist-card,.artist-media,.doctor-card,.service-visual,.studio-map-card,.studio-card,.branch-card,.branch-intro-photo,.archive-note,.archive-card,.tribute-sign,.ataturk-counter,.ataturk-portrait-stage,.artist-work-card,.portrait,.booking-step,.service-detail,.booking-shell,.appointment-shell,.moodgrid,.filterbar,.artist-work-mosaic';
   const blockersSel='h1,h2,h3,h4,h5,h6,p,blockquote,li,a,button,input,select,textarea,label,figure,img,video,table,.eyebrow,.kick,.crumb,.hero-note,.doctor-lead,.doctor-copy,.manifest-copy,.timeline,.archive-head,.doctor-stats,.artist-info,.artist-work-card,'+panels;
   const layers=[];
   const used=new Map();
@@ -90,7 +94,7 @@
     if(sw<240||sh<110)return;
     const mobile=innerWidth<760,tablet=innerWidth>=760&&innerWidth<1100;
     const baseDensity=(sw*sh)/(mobile?78000:tablet?56000:43000);
-    const goal=Math.min(mobile?9:tablet?18:26,Math.max(mobile?3:6,Math.round(baseDensity)));
+    const goal=Math.min(mobile?5:tablet?12:26,Math.max(mobile?2:tablet?4:6,Math.round(baseDensity)));
     const placed=[];
     const neighborhood=[];
     const colors=STAR_COLORS[theme]||STAR_COLORS.dark;
@@ -127,7 +131,7 @@
     if(sw<260||sh<140){entry.starLayer.replaceChildren();return;}
     const mobile=innerWidth<760,tablet=innerWidth>=760&&innerWidth<1100;
     const density=(sw*sh)/(mobile?200000:tablet?128000:91000);
-    const goal=Math.min(mobile?4:tablet?10:16,Math.max(mobile?2:3,Math.round(density)));
+    const goal=Math.min(mobile?2:tablet?7:16,Math.max(mobile?1:tablet?2:3,Math.round(density)));
     const reserved=protectedAreas(section);
     const collisions=[];
     const nowFamilies=new Set();
@@ -196,6 +200,7 @@
     schedule();
     addEventListener('resize',schedule,{passive:true});
     addEventListener('load',schedule,{once:true});
+    document.addEventListener('visibilitychange',()=>document.documentElement.classList.toggle('k6-page-hidden',document.hidden));
     document.fonts?.ready.then(schedule);
     if('ResizeObserver' in window){const ro=new ResizeObserver(schedule);layers.forEach(l=>ro.observe(l.section));}
     document.addEventListener('click',ev=>{

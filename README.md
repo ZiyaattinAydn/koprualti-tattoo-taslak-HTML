@@ -1,6 +1,6 @@
 # Köprüaltı Tattoo & Piercing — Website Prototype
 
-Static HTML/CSS/JavaScript prototype for the Köprüaltı Tattoo & Piercing website. Current handoff: **v48** (the classic black footer and full-width appointment redesign).
+Static HTML/CSS/JavaScript prototype for the Köprüaltı Tattoo & Piercing website. Current handoff: **v56** (final static source and Next.js migration plan).
 
 ## Current scope
 
@@ -60,3 +60,15 @@ Güncel sürüm v50: 58 temizlenmiş orijinal motif, dokuz sayfada tek katmandan
 ## v53 başlık genişletmesi
 - Rye fontu artık Hizmetler sayfasına ek olarak şu başlıklarda da kullanılıyor: `İzmir'de iki nokta.`, `İşi yapan insanlar.`, `Portfolyo`, `KÖPRÜALTI` archive kartı ve `1993'TEN BERİ.`
 - Uygulama dosyası: `css/basliklar-rye-v53.css`
+
+## v54 — Portfolyo ve görsel görüntüleyici
+
+İki aşamalı filtreler `js/portfolio-v54.js` içinde, ortak görüntüleyici `js/lightbox-v54.js` içinde; stiller `css/portfolio-lightbox-v54.css` içinde. Arşiv fotoğrafları doğrulanmış uygulama veya sanatçı etiketi taşımıyor. Yeni iş eklenirken kartın `data-types` alanına `tattoo`, `piercing` veya `coverup`, `data-artist` alanına seçenekteki sanatçı anahtarı girilmeli; ayrıca görüntüleyicideki `data-type` ve `data-artist-label` güncellenmelidir. Ayrıntılar `GUNCELLEME_NOTLARI_v54.md` içinde.
+
+## v55 — Şubeler ve interaktif giriş
+
+İki şube sayfası (`sube-alsancak.html`, `sube-karsiyaka.html`) ve şube kartları `css/branches-v55.css` kullanır. Ana sayfa canvas etkileşimi `js/tattoo-cursor-v55.js` ve `css/tattoo-cursor-v55.css` içindedir. Ses dosyası eklenene kadar kontrol devre dışıdır. Ayrıntılar `GUNCELLEME_NOTLARI_v55.md` dosyasında.
+
+## v56 — Son statik kaynak ve geçiş planı
+
+Hedefli mobil/erişilebilirlik/perf düzeltmeleri `css/final-responsive-v56.css`, `js/app.js` ve `js/doodles-v50.js` içinde. Gerçek tarayıcı ekran görüntüsü bu ortamda alınamadı; test sınırları `GUNCELLEME_NOTLARI_v56.md` içinde belirtilmiştir. Route ve veri modeli taslağı `NEXTJS_GECIS_PLANI.md` dosyasındadır.
