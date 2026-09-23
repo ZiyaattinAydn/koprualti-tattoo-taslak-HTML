@@ -5,3 +5,5 @@
 - Telefonlarda stüdyonun mevcut orijinal çizimlerinden üçü küçük bir çizim şeridinde gösteriliyor. Bunlar uygulama fotoğrafı olarak sunulmuyor ve lightbox'a eklenmiyor.
 - Mobil doodle yoğunluğu ölçülü biçimde arttı ve arka plan çizimleri okunabilecek seviyeye getirildi. En fazla dört büyük motif/alan kullanılır; çakışma kontrolü sürer.
 - Ana sayfa arşiv kartları ve portfolyo görselleri telefonda iki sütunda görüntülenir. Portfolyodaki görseller hâlâ uygulama türü ve sanatçısı doğrulanmamış stüdyo fotoğraflarıdır.
+
+- Yayındaki CSS/JS önbelleği eski hatalı yerleşimi göstermesin diye dosya adreslerine v58 sürüm parametresi eklendi.
