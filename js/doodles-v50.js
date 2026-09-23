@@ -130,8 +130,8 @@
     layer.replaceChildren();
     if(sw<260||sh<140){entry.starLayer.replaceChildren();return;}
     const mobile=innerWidth<760,tablet=innerWidth>=760&&innerWidth<1100;
-    const density=(sw*sh)/(mobile?200000:tablet?128000:91000);
-    const goal=Math.min(mobile?2:tablet?7:16,Math.max(mobile?1:tablet?2:3,Math.round(density)));
+    const density=(sw*sh)/(mobile?130000:tablet?128000:91000);
+    const goal=Math.min(mobile?4:tablet?7:16,Math.max(mobile?2:tablet?2:3,Math.round(density)));
     const reserved=protectedAreas(section);
     const collisions=[];
     const nowFamilies=new Set();

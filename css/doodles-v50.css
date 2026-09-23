@@ -7,7 +7,7 @@
   --k6-star-asterisk:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='1.65' stroke-linecap='round'%3E%3Cpath d='M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9'/%3E%3C/g%3E%3C/svg%3E");
 }
 .doodle-v50-surface {position:relative;isolation:isolate;overflow:hidden}
-.doodle-v50-surface > :not(.doodle-v50-layer):not(.doodle-v51-star-layer){position:relative;z-index:2}
+.doodle-v50-surface > :not(.doodle-v50-layer):not(.doodle-v51-star-layer):not(.hero-meta){position:relative;z-index:2}
 .doodle-v50-layer{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;user-select:none;contain:paint}
 .doodle-v51-star-layer{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;user-select:none;contain:paint}
 .doodle-v50-mark{
@@ -44,7 +44,7 @@
   to{transform:translate3d(2px,-3px,0) rotate(calc(var(--sr) + 7deg)) scale(1.08);opacity:calc(var(--so) + .12)}
 }
 @media(max-width:760px){
-  .doodle-v50-mark{opacity:calc(var(--do) * .74)}
+  .doodle-v50-mark{opacity:clamp(.23,calc(var(--do) * 1.55),.34)}
   .doodle-v50-sparkle{opacity:calc(var(--so) * .86)}
 }
 @media(prefers-reduced-motion:reduce){
