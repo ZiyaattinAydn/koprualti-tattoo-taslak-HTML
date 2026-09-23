@@ -8,17 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rye&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/polish-september.css"><link rel="stylesheet" href="css/design-v33.css"><link rel="stylesheet" href="css/footer-v37.css"><link rel="stylesheet" href="css/header-v38.css"><link rel="stylesheet" href="css/ambient-v40.css"><link rel="stylesheet" href="css/tipografi-v44.css"><link rel="stylesheet" href="css/fix-v45.css">
+
+<link rel="stylesheet" href="css/doodles-v50.css"><link rel="stylesheet" href="css/basliklar-rye-v53.css"></head>
+<body class="artists-page-view">
   <div class="top"></div>
-  <header class="header">
+  <header class="header header-v38">
     <div class="container head">
       <a class="brand" href="index.html" aria-label="KöprüAltı ana sayfa">
         <span class="brand-logo-crop"><img src="assets/koprualti-original-logo.png" alt="KöprüAltı Tattoo & Piercing"></span>
       </a>
-      <button class="mobile" type="button" aria-expanded="false">MENÜ</button>
-      <nav class="nav">
+      <button class="mobile" type="button" aria-expanded="false" aria-controls="site-main-nav">MENÜ</button>
+      <nav class="nav" id="site-main-nav" aria-label="Ana menü">
         <a href="index.html">Anasayfa</a>
         <a href="portfolio.html">Portfolyo</a>
         <a class="active" href="artists.html">Sanatçılar</a>
@@ -26,7 +27,7 @@
         <a href="ataturk.html">Atam</a>
         <a href="studios.html">Şubeler</a>
         <div class="dd">
-          <button type="button">Hizmetler ▾</button>
+          <button type="button" aria-expanded="false" aria-haspopup="true">Hizmetler ▾</button>
           <div class="ddmenu">
             <a href="services.html">Tüm Hizmetler</a>
             <a href="services.html#tattoo">Tattoo</a>
@@ -43,7 +44,7 @@
     <section class="pagehero">
       <div class="container">
         <div class="crumb">ANASAYFA / SANATÇILAR</div>
-        <div class="eyebrow">EKİP</div>
+        
         <h1>İşi yapan insanlar.</h1>
         <p>Köprüaltı'nın tonu sadece duvarlarda değil; yıllardır bu masanın başında duran, müşteriyle ilişki kuran ve işi taşıyan insanlarda da saklı. Bu sayfa final sürüme giderken her sanatçı için daha fazla fotoğraf, seçili iş ve uygulama alanı bilgisiyle genişleyecek.</p>
       </div>
@@ -79,20 +80,22 @@
     </section>
 
     <section id="cansin" class="artist-spotlight cansin-spotlight">
-      <div class="wrap artist-spotlight-grid alt reveal d1">
-        <div class="artist-media artist-sheet">
-          <div class="artist-sheet-inner">
-            <div class="eyebrow">02 / PROFİL HAZIRLANIYOR</div>
-            <div class="artist-mono">C</div>
-            <h3>Cansın</h3>
-            <p>Bu bölüm profesyonel çekimler, seçili işler ve detaylı tanıtım metniyle güncellenecek. Şimdilik yerini ayırdık.</p>
+      <div class="wrap artist-spotlight-grid reveal d1">
+        <div class="artist-media artist-media-placeholder">
+          <div class="artist-profile-sheet">
+            <div class="artist-profile-sheet__inner">
+              <div class="artist-profile-sheet__eyebrow">02 / PROFİL HAZIRLANIYOR</div>
+              <div class="artist-profile-sheet__mono">C</div>
+              <h3 class="artist-profile-sheet__name">Cansın</h3>
+              <p class="artist-profile-sheet__text">Profesyonel çekimler, seçili işler ve detaylı tanıtım metni geldikçe bu alan tamamlanacak. Şimdilik yapının yerini net biçimde açıyoruz.</p>
+            </div>
           </div>
         </div>
         <div class="artist-copy">
           <div class="eyebrow">02 / EKİP</div>
           <h2 class="heritage artist-title">Cansın</h2>
-          <p class="artist-lead">Cansın için elimizde henüz kapsamlı bir biyografi yok; ama sayfada yerini şimdiden açıyoruz.</p>
-          <p class="artist-body">Final sürümde burada uzmanlık alanları, çalışma yaklaşımı, sevdiği stiller ve seçili uygulamalar yer alacak. Şimdilik bu alanı, Köprüaltı ekibinin ikinci yüzünü temsil eden geçici bir tanıtım bandı olarak düşünüyoruz. Yeni çekimler ve bilgiler geldikçe bu bölüm daha kişisel, daha dolu ve daha net bir profile dönüşecek.</p>
+          <p class="artist-lead">Cansın için elimizde henüz kapsamlı bir biyografi yok; ama sayfadaki yerini Doktor'la aynı sistem içinde şimdiden açıyoruz.</p>
+          <p class="artist-body">Final sürümde burada uzmanlık alanları, çalışma yaklaşımı, sevdiği stiller ve seçili uygulamalar yer alacak. Şimdilik bu alanı, Köprüaltı ekibinin ikinci yüzünü temsil eden geçici ama düzenli bir profil alanı olarak kullanıyoruz. Yeni çekimler ve net bilgiler geldikçe bu bölüm daha kişisel, daha dolu ve daha net bir profile dönüşecek.</p>
           <div class="artist-focus">
             <span class="artist-focus-label">UYGULAMA ALANLARI</span>
             <div class="artist-focus-list">
@@ -102,29 +105,32 @@
             </div>
           </div>
           <div class="artist-tags muted-tags">
-            <span>Profil güncelleniyor</span>
-            <span>Yeni çekimler eklenecek</span>
-            <span>Seçili işler yakında</span>
+            <span>Profil Güncelleniyor</span>
+            <span>Yeni Çekimler Eklenecek</span>
+            <span>Seçili İşler Yakında</span>
           </div>
+          <div class="artist-profile-action"><span class="btn-ghost">Profil Yakında</span></div>
         </div>
       </div>
     </section>
 
     <section id="su" class="artist-spotlight su-spotlight">
       <div class="wrap artist-spotlight-grid reveal d2">
-        <div class="artist-media artist-sheet">
-          <div class="artist-sheet-inner">
-            <div class="eyebrow">03 / PROFİL HAZIRLANIYOR</div>
-            <div class="artist-mono">S</div>
-            <h3>Su</h3>
-            <p>Bu bölüm profesyonel çekimler, seçili işler ve detaylı tanıtım metniyle güncellenecek. Şimdilik yerini ayırdık.</p>
+        <div class="artist-media artist-media-placeholder">
+          <div class="artist-profile-sheet">
+            <div class="artist-profile-sheet__inner">
+              <div class="artist-profile-sheet__eyebrow">03 / PROFİL HAZIRLANIYOR</div>
+              <div class="artist-profile-sheet__mono">S</div>
+              <h3 class="artist-profile-sheet__name">Su</h3>
+              <p class="artist-profile-sheet__text">Profesyonel çekimler, seçili işler ve detaylı tanıtım metni geldikçe bu alan tamamlanacak. Şimdilik yapının yerini net biçimde açıyoruz.</p>
+            </div>
           </div>
         </div>
         <div class="artist-copy">
           <div class="eyebrow">03 / EKİP</div>
           <h2 class="heritage artist-title">Su</h2>
-          <p class="artist-lead">Su için elimizde henüz kapsamlı bir biyografi yok; ama sayfada yerini şimdiden açıyoruz.</p>
-          <p class="artist-body">Final sürümde burada uzmanlık alanları, çalışma yaklaşımı, sevdiği stiller ve seçili uygulamalar yer alacak. Profesyonel çekimler ve bilgiler geldikçe bu bölüm Su'nun kendi karakterini taşıyan, daha kişisel ve daha dolu bir profile dönüşecek.</p>
+          <p class="artist-lead">Su için elimizde henüz kapsamlı bir biyografi yok; ama aynı görsel sistem içinde yerini şimdiden açıyoruz.</p>
+          <p class="artist-body">Final sürümde burada çalışma yaklaşımı, sevdiği stiller, seçili uygulamalar ve kısa biyografi yer alacak. Şimdilik bu alan, ekipteki her ismin aynı düzende ve aynı ciddiyetle temsil edilmesi için bir temel olarak duruyor.</p>
           <div class="artist-focus">
             <span class="artist-focus-label">UYGULAMA ALANLARI</span>
             <div class="artist-focus-list">
@@ -132,29 +138,32 @@
             </div>
           </div>
           <div class="artist-tags muted-tags">
-            <span>Profil güncelleniyor</span>
-            <span>Yeni çekimler eklenecek</span>
-            <span>Seçili işler yakında</span>
+            <span>Profil Güncelleniyor</span>
+            <span>Yeni Çekimler Eklenecek</span>
+            <span>Seçili İşler Yakında</span>
           </div>
+          <div class="artist-profile-action"><span class="btn-ghost">Profil Yakında</span></div>
         </div>
       </div>
     </section>
 
     <section id="birsu" class="artist-spotlight birsu-spotlight">
-      <div class="wrap artist-spotlight-grid alt reveal d3">
-        <div class="artist-media artist-sheet">
-          <div class="artist-sheet-inner">
-            <div class="eyebrow">04 / PROFİL HAZIRLANIYOR</div>
-            <div class="artist-mono">B</div>
-            <h3>Birsu</h3>
-            <p>Bu bölüm profesyonel çekimler, seçili işler ve detaylı tanıtım metniyle güncellenecek. Şimdilik yerini ayırdık.</p>
+      <div class="wrap artist-spotlight-grid reveal d3">
+        <div class="artist-media artist-media-placeholder">
+          <div class="artist-profile-sheet">
+            <div class="artist-profile-sheet__inner">
+              <div class="artist-profile-sheet__eyebrow">04 / PROFİL HAZIRLANIYOR</div>
+              <div class="artist-profile-sheet__mono">B</div>
+              <h3 class="artist-profile-sheet__name">Birsu</h3>
+              <p class="artist-profile-sheet__text">Profesyonel çekimler, seçili işler ve detaylı tanıtım metni geldikçe bu alan tamamlanacak. Şimdilik yapının yerini net biçimde açıyoruz.</p>
+            </div>
           </div>
         </div>
         <div class="artist-copy">
           <div class="eyebrow">04 / EKİP</div>
           <h2 class="heritage artist-title">Birsu</h2>
-          <p class="artist-lead">Birsu için elimizde henüz kapsamlı bir biyografi yok; ama sayfada yerini şimdiden açıyoruz.</p>
-          <p class="artist-body">Final sürümde burada uzmanlık alanları, çalışma yaklaşımı, sevdiği stiller ve seçili uygulamalar yer alacak. Yeni çekimler, biyografi ve portfolyo seçkisi geldikçe bu bölüm Birsu'ya özel bir profile dönüşecek.</p>
+          <p class="artist-lead">Birsu için elimizde henüz kapsamlı bir biyografi yok; ama aynı sistemin bir parçası olarak sayfadaki yerini açıyoruz.</p>
+          <p class="artist-body">Final sürümde burada uzmanlık alanları, çalışma yaklaşımı ve seçili uygulamalar yer alacak. Yeni çekimler ve bilgiler geldikçe bu bölüm de diğer sanatçılar gibi güçlü, düzenli ve daha kişisel bir profile dönüşecek.</p>
           <div class="artist-focus">
             <span class="artist-focus-label">UYGULAMA ALANLARI</span>
             <div class="artist-focus-list">
@@ -162,15 +171,16 @@
             </div>
           </div>
           <div class="artist-tags muted-tags">
-            <span>Profil güncelleniyor</span>
-            <span>Yeni çekimler eklenecek</span>
-            <span>Seçili işler yakında</span>
+            <span>Profil Güncelleniyor</span>
+            <span>Yeni Çekimler Eklenecek</span>
+            <span>Seçili İşler Yakında</span>
           </div>
+          <div class="artist-profile-action"><span class="btn-ghost">Profil Yakında</span></div>
         </div>
       </div>
     </section>
 
-    <section class="artist-planner">
+<section class="artist-planner">
       <div class="wrap reveal d3">
         <div class="artist-planner-box">
           <div>
@@ -183,31 +193,37 @@
     </section>
 </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="assets/koprualti-original-logo.png" alt="KöprüAltı">
-        <p>1993'ten bugüne dövme, piercing ve Köprüaltı'nın kendi stüdyo kültürü.</p>
-      </div>
-      <div>
-        <h4>SİTE</h4>
-        <a href="index.html">Anasayfa</a>
-        <a href="portfolio.html">Portfolyo</a>
-        <a href="artists.html">Sanatçılar</a>
-        <a href="about.html">Hakkımızda</a>
-        <a href="ataturk.html">Atam</a>
-        <a href="studios.html">Şubeler</a>
-      </div>
-      <div>
-        <h4>İLETİŞİM</h4>
-        <a href="appointment.html">Randevu Al</a>
-        <a href="ataturk.html">Atatürk İmzası</a>
-        <a href="studios.html">Şubeler</a>
+  <footer class="footer footer-classic footer-v37" aria-label="Site alt bilgisi">
+  <div class="container footer-v37-top">
+    <div class="footer-v37-identity">
+      <img src="assets/koprualti-original-logo.png" alt="Köprüaltı Tattoo &amp; Piercing" class="footer-v37-logo" loading="lazy">
+      <p>1993'ten beri aynı ruh, yeni izler.</p>
+    </div>
+    <div class="footer-v37-panel">
+      <div class="footer-v37-kicker"><span class="footer-v37-dash"></span> KÖPRÜALTI / KEŞFET</div>
+      <nav class="footer-v37-nav" aria-label="Footer menüsü">
+          <a href="index.html">Anasayfa</a>
+          <a href="portfolio.html">Portfolyo</a>
+          <a href="artists.html">Sanatçılar</a>
+          <a href="about.html">Hakkımızda</a>
+          <a href="ataturk.html">Atam</a>
+          <a href="studios.html">Şubeler</a>
+          <a href="services.html">Hizmetler</a>
+          <a href="appointment.html" class="footer-v37-appointment">Randevu Al</a>
+      </nav>
+      <div class="footer-v37-details">
+        <span>Köprüaltı Tattoo &amp; Piercing <em>·</em> 1993'ten beri</span>
+        <span>ALSANCAK <em>/</em> KARŞIYAKA <em>·</em> İZMİR</span>
       </div>
     </div>
-    <div class="container bottom"><span>Köprüaltı Tattoo & Piercing · Since 1993</span><span>İzmir</span></div>
-  </footer>
+  </div>
+  <div class="container footer-v37-bottom">
+    <span>© 2026 Köprüaltı Tattoo &amp; Piercing</span>
+    <span>İZMİR <i aria-hidden="true">✳</i> TÜRKİYE</span>
+  </div>
+</footer>
 
   <script src="js/app.js"></script>
-</body>
+
+<script defer src="js/doodles-v50.js"></script></body>
 </html>

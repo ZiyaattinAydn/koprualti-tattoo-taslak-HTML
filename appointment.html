@@ -8,15 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rye&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/polish-september.css"><link rel="stylesheet" href="css/design-v33.css"><link rel="stylesheet" href="css/footer-v37.css"><link rel="stylesheet" href="css/header-v38.css"><link rel="stylesheet" href="css/ambient-v40.css"><link rel="stylesheet" href="css/tipografi-v44.css"><link rel="stylesheet" href="css/fix-v45.css">
+
+<link rel="stylesheet" href="css/doodles-v50.css"></head>
 <body>
   <div class="top"></div>
-  <header class="header">
+  <header class="header header-v38">
     <div class="container head">
       <a class="brand" href="index.html" aria-label="KöprüAltı ana sayfa"><span class="brand-logo-crop"><img src="assets/koprualti-original-logo.png" alt="KöprüAltı Tattoo & Piercing"></span></a>
-      <button class="mobile" type="button" aria-expanded="false">MENÜ</button>
-      <nav class="nav">
+      <button class="mobile" type="button" aria-expanded="false" aria-controls="site-main-nav">MENÜ</button>
+      <nav class="nav" id="site-main-nav" aria-label="Ana menü">
         <a href="index.html">Anasayfa</a>
         <a href="portfolio.html">Portfolyo</a>
         <a href="artists.html">Sanatçılar</a>
@@ -24,7 +25,7 @@
         <a href="ataturk.html">Atam</a>
         <a href="studios.html">Şubeler</a>
         <div class="dd">
-          <button type="button">Hizmetler ▾</button>
+          <button type="button" aria-expanded="false" aria-haspopup="true">Hizmetler ▾</button>
           <div class="ddmenu">
             <a href="services.html">Tüm Hizmetler</a>
             <a href="services.html#tattoo">Tattoo</a>
@@ -37,58 +38,89 @@
     </div>
   </header>
 
-  <main class="appointment-page appointment-page-v2">
-    <div class="container">
-      <div class="appointment-accent reveal"></div>
-      <section class="appointment-shell reveal d1">
-        <div class="appointment-wrap">
-          <aside class="appointment-copy">
-            <div class="eyebrow" style="color:#f2eaf4">06 / RANDEVU</div>
-            <h1><span class="white-line">FİKRİNİ</span><br><span class="violet-line">BİZE</span><br><span class="violet-line">BIRAK.</span></h1>
-            <p>İşlemi seç, şubeyi belirle, fikrini ve varsa referanslarını ekle. Geri kalanını stüdyo seninle netleştirsin.</p>
-            <div class="steps"><i class="active"></i><i></i><i></i></div>
-          </aside>
-
-          <form class="form d2" onsubmit="return false">
-            <div class="appointment-service-note"></div>
+  <main class="appointment-page appointment-page-v33">
+    <section class="booking-stage" aria-labelledby="booking-title">
+      <div class="container booking-layout">
+        <aside class="booking-intro reveal">
+          <div class="booking-kicker"><span class="booking-line" aria-hidden="true"></span>06 / RANDEVU · İZMİR</div>
+          <h1 id="booking-title"><span class="booking-main">FİKRİNİ</span><span class="booking-mid">BİZE</span><span class="booking-sign">BIRAK.</span></h1>
+          <p>İşlemi seç, şubeyi belirle, aklındaki fikri ve varsa referanslarını ekle. Gerisini stüdyo seninle birlikte netleştirsin.</p>
+          <div class="steps booking-journey" aria-label="Randevu adımları">
+            <i class="active"><b>01</b><span>İŞLEM</span></i>
+            <i><b>02</b><span>DETAYLAR</span></i>
+            <i><b>03</b><span>İLETİŞİM</span></i>
+          </div>
+          <div class="booking-signature">KÖPRÜALTI TATTOO &amp; PIERCING <span>—</span> SINCE 1993</div>
+        </aside>
+        <div class="booking-form-card reveal d1">
+          <div class="booking-form-header"><div><span class="booking-form-label">KÖPRÜALTI / RANDEVU TALEBİ</span><h2>Nasıl başlayalım?</h2></div><span class="booking-count"><b data-step-current>01</b><span> / 03</span></span></div>
+          <div class="booking-rule" aria-hidden="true"></div>
+          <form class="form" onsubmit="return false">
+            <div class="appointment-service-note" role="status"></div>
             <div class="formpage active">
               <h3>1. Ne yaptırmak istiyorsun?</h3>
+              <p class="booking-field-hint">Aklındaki fikre en yakın seçeneği işaretle.</p>
               <div class="choices">
                 <button type="button" class="choice active" data-value="tattoo">Tattoo</button>
                 <button type="button" class="choice" data-value="piercing">Piercing</button>
                 <button type="button" class="choice" data-value="coverup">Cover-Up</button>
                 <button type="button" class="choice" data-value="kararsızım">Kararsızım</button>
               </div>
-              <div class="formactions"><span></span><button type="button" data-next class="btn purple">Devam Et</button></div>
+              <div class="formactions"><span></span><button type="button" data-next class="btn purple">Devam et <span aria-hidden="true">↗</span></button></div>
             </div>
             <div class="formpage">
               <h3>2. Şube ve fikir</h3>
-              <div class="field"><label>ŞUBE</label><select name="branch"><option value="Alsancak">Alsancak</option><option value="Karşıyaka">Karşıyaka</option></select></div>
-              <div class="field"><label>KISACA ANLAT</label><textarea placeholder="Aklındaki fikri anlat..."></textarea></div>
-              <div class="field"><label>REFERANS GÖRSELİ</label><input type="file" accept="image/*"></div>
-              <div class="formactions"><button type="button" data-prev class="btn dark">Geri</button><button type="button" data-next class="btn purple">Devam Et</button></div>
+              <p class="booking-field-hint">Çalışmanın detaylarını burada konuşmaya başlayalım.</p>
+              <div class="field"><label for="booking-branch">ŞUBE</label><select id="booking-branch" name="branch"><option value="Alsancak">Alsancak</option><option value="Karşıyaka">Karşıyaka</option></select></div>
+              <div class="field"><label for="booking-idea">KISACA ANLAT</label><textarea id="booking-idea" placeholder="Aklındaki fikri anlat..."></textarea></div>
+              <div class="field"><label for="booking-reference">REFERANS GÖRSELİ</label><input id="booking-reference" type="file" accept="image/*"></div>
+              <div class="formactions"><button type="button" data-prev class="btn dark">← Geri</button><button type="button" data-next class="btn purple">Devam et ↗</button></div>
             </div>
             <div class="formpage">
               <h3>3. Sana nasıl ulaşalım?</h3>
-              <div class="field"><label>AD SOYAD</label><input type="text" autocomplete="name"></div>
-              <div class="field"><label>TELEFON</label><input type="tel" autocomplete="tel"></div>
-              <div class="field"><label>E-POSTA</label><input type="email" autocomplete="email"></div>
-              <div class="formactions"><button type="button" data-prev class="btn dark">Geri</button><button type="submit" class="btn purple">Talebi Gönder</button></div>
+              <p class="booking-field-hint">Detayları konuşmak için iletişim bilgilerini bırak.</p>
+              <div class="field"><label for="booking-name">AD SOYAD</label><input id="booking-name" type="text" autocomplete="name"></div>
+              <div class="field"><label for="booking-phone">TELEFON</label><input id="booking-phone" type="tel" autocomplete="tel"></div>
+              <div class="field"><label for="booking-email">E-POSTA</label><input id="booking-email" type="email" autocomplete="email"></div>
+              <div class="formactions"><button type="button" data-prev class="btn dark">← Geri</button><button type="submit" class="btn purple">Talebi gönder ↗</button></div>
             </div>
-            <p class="appointment-form-note">Detaylar ve referans görselleri sonraki adımlarda eklenir.</p>
+            <p class="appointment-form-note">Bu taslakta gönderim henüz aktif değil. Gerçek randevu bağlantısı geliştirme aşamasında eklenecek.</p>
           </form>
         </div>
-      </section>
-    </div>
+      </div>
+      <div class="container booking-bottom" aria-label="Stüdyo bilgisi"><span>ALSANCAK <i>✳</i> KARŞIYAKA</span><span>İŞİN HİKÂYESİ BURADA BAŞLAR.</span></div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div><img class="footer-logo" src="assets/koprualti-original-logo.png" alt="KöprüAltı"><p>1993'ten bugüne dövme, piercing ve Köprüaltı'nın kendi stüdyo kültürü.</p></div>
-      <div><h4>SİTE</h4><a href="index.html">Anasayfa</a><a href="portfolio.html">Portfolyo</a><a href="artists.html">Sanatçılar</a><a href="about.html">Hakkımızda</a><a href="ataturk.html">Atam</a><a href="studios.html">Şubeler</a></div>
-      <div><h4>İLETİŞİM</h4><a href="appointment.html">Randevu Al</a><a href="studios.html">Alsancak</a><a href="studios.html">Karşıyaka</a></div>
+  <footer class="footer footer-classic footer-v37" aria-label="Site alt bilgisi">
+  <div class="container footer-v37-top">
+    <div class="footer-v37-identity">
+      <img src="assets/koprualti-original-logo.png" alt="Köprüaltı Tattoo &amp; Piercing" class="footer-v37-logo" loading="lazy">
+      <p>1993'ten beri aynı ruh, yeni izler.</p>
     </div>
-    <div class="container bottom"><span>Köprüaltı Tattoo & Piercing · Since 1993</span><span>İzmir</span></div>
-  </footer>
+    <div class="footer-v37-panel">
+      <div class="footer-v37-kicker"><span class="footer-v37-dash"></span> KÖPRÜALTI / KEŞFET</div>
+      <nav class="footer-v37-nav" aria-label="Footer menüsü">
+          <a href="index.html">Anasayfa</a>
+          <a href="portfolio.html">Portfolyo</a>
+          <a href="artists.html">Sanatçılar</a>
+          <a href="about.html">Hakkımızda</a>
+          <a href="ataturk.html">Atam</a>
+          <a href="studios.html">Şubeler</a>
+          <a href="services.html">Hizmetler</a>
+          <a href="appointment.html" class="footer-v37-appointment">Randevu Al</a>
+      </nav>
+      <div class="footer-v37-details">
+        <span>Köprüaltı Tattoo &amp; Piercing <em>·</em> 1993'ten beri</span>
+        <span>ALSANCAK <em>/</em> KARŞIYAKA <em>·</em> İZMİR</span>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-v37-bottom">
+    <span>© 2026 Köprüaltı Tattoo &amp; Piercing</span>
+    <span>İZMİR <i aria-hidden="true">✳</i> TÜRKİYE</span>
+  </div>
+</footer>
   <script src="js/app.js"></script>
-</body></html>
+
+<script defer src="js/doodles-v50.js"></script></body></html>

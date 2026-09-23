@@ -8,15 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Rye&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/polish-september.css"><link rel="stylesheet" href="css/design-v33.css"><link rel="stylesheet" href="css/footer-v37.css"><link rel="stylesheet" href="css/header-v38.css"><link rel="stylesheet" href="css/ambient-v40.css"><link rel="stylesheet" href="css/tipografi-v44.css"><link rel="stylesheet" href="css/fix-v45.css">
+
+<link rel="stylesheet" href="css/doodles-v50.css"></head>
 <body class="artist-detail-page">
   <div class="top"></div>
-  <header class="header">
+  <header class="header header-v38">
     <div class="container head">
       <a class="brand" href="index.html" aria-label="KöprüAltı ana sayfa"><span class="brand-logo-crop"><img src="assets/koprualti-original-logo.png" alt="KöprüAltı Tattoo & Piercing"></span></a>
-      <button class="mobile" type="button" aria-expanded="false">MENÜ</button>
-      <nav class="nav">
+      <button class="mobile" type="button" aria-expanded="false" aria-controls="site-main-nav">MENÜ</button>
+      <nav class="nav" id="site-main-nav" aria-label="Ana menü">
         <a href="index.html">Anasayfa</a>
         <a href="portfolio.html">Portfolyo</a>
         <a class="active" href="artists.html">Sanatçılar</a>
@@ -24,7 +25,7 @@
         <a href="ataturk.html">Atam</a>
         <a href="studios.html">Şubeler</a>
         <div class="dd">
-          <button type="button">Hizmetler ▾</button>
+          <button type="button" aria-expanded="false" aria-haspopup="true">Hizmetler ▾</button>
           <div class="ddmenu">
             <a href="services.html">Tüm Hizmetler</a>
             <a href="services.html#tattoo">Tattoo</a>
@@ -133,14 +134,35 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div><img class="footer-logo" src="assets/koprualti-original-logo.png" alt="KöprüAltı"><p>1993'ten bugüne dövme, piercing ve Köprüaltı'nın kendi stüdyo kültürü.</p></div>
-      <div><h4>SİTE</h4><a href="index.html">Anasayfa</a><a href="portfolio.html">Portfolyo</a><a href="artists.html">Sanatçılar</a><a href="about.html">Hakkımızda</a><a href="ataturk.html">Atam</a><a href="studios.html">Şubeler</a></div>
-      <div><h4>İLETİŞİM</h4><a href="appointment.html">Randevu Al</a><a href="artist-doktor.html">Doktor</a><a href="studios.html">Şubeler</a></div>
+  <footer class="footer footer-classic footer-v37" aria-label="Site alt bilgisi">
+  <div class="container footer-v37-top">
+    <div class="footer-v37-identity">
+      <img src="assets/koprualti-original-logo.png" alt="Köprüaltı Tattoo &amp; Piercing" class="footer-v37-logo" loading="lazy">
+      <p>1993'ten beri aynı ruh, yeni izler.</p>
     </div>
-    <div class="container bottom"><span>Köprüaltı Tattoo & Piercing · Since 1993</span><span>İzmir</span></div>
-  </footer>
+    <div class="footer-v37-panel">
+      <div class="footer-v37-kicker"><span class="footer-v37-dash"></span> KÖPRÜALTI / KEŞFET</div>
+      <nav class="footer-v37-nav" aria-label="Footer menüsü">
+          <a href="index.html">Anasayfa</a>
+          <a href="portfolio.html">Portfolyo</a>
+          <a href="artists.html">Sanatçılar</a>
+          <a href="about.html">Hakkımızda</a>
+          <a href="ataturk.html">Atam</a>
+          <a href="studios.html">Şubeler</a>
+          <a href="services.html">Hizmetler</a>
+          <a href="appointment.html" class="footer-v37-appointment">Randevu Al</a>
+      </nav>
+      <div class="footer-v37-details">
+        <span>Köprüaltı Tattoo &amp; Piercing <em>·</em> 1993'ten beri</span>
+        <span>ALSANCAK <em>/</em> KARŞIYAKA <em>·</em> İZMİR</span>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-v37-bottom">
+    <span>© 2026 Köprüaltı Tattoo &amp; Piercing</span>
+    <span>İZMİR <i aria-hidden="true">✳</i> TÜRKİYE</span>
+  </div>
+</footer>
 
   <script src="js/app.js"></script>
   <script>
@@ -170,5 +192,6 @@
       window.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
     })();
   </script>
-</body>
+
+<script defer src="js/doodles-v50.js"></script></body>
 </html>
